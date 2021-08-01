@@ -184,7 +184,7 @@ public class Main {
         view_but.addActionListener(new ActionListener() {
                                        public void actionPerformed(ActionEvent e){
 
-                                           JFrame f = new JFrame("Books Available"); //View books stored in database
+                                           JFrame f = new JFrame("ITEMS Available"); //View books stored in database
                                            //f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 
