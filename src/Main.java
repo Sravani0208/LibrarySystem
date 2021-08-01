@@ -291,7 +291,7 @@ public class Main {
         view_but.addActionListener(new ActionListener() {
                                        public void actionPerformed(ActionEvent e){
 
-                                           JFrame f = new JFrame("Books Available");
+                                           JFrame f = new JFrame("Items Available");
                                            //f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 
