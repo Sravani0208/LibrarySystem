@@ -217,13 +217,13 @@ public class Main {
                                    }
         );
 
-        JButton my_book=new JButton("My Books");//creating instance of JButton
+        JButton my_book=new JButton("My Items");//creating instance of JButton
         my_book.setBounds(150,20,120,25);//x axis, y axis, width, height
         my_book.addActionListener(new ActionListener() { //Perform action
                                       public void actionPerformed(ActionEvent e){
 
 
-                                          JFrame f = new JFrame("My Books"); //View books issued by user
+                                          JFrame f = new JFrame("My Items"); //View books issued by user
                                           //f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                                           int UID_int = Integer.parseInt(UID); //Pass user ID
 
@@ -275,7 +275,7 @@ public class Main {
                 l1.setBounds(30,15, 100,30);
 
 
-                l2=new JLabel("Book Name");  //label 2 for book name
+                l2=new JLabel("Item Name");  //label 2 for book name
                 l2.setBounds(30,53, 100,30);
 
                 l3=new JLabel("Requested UID");  //label 3 for UID
@@ -311,7 +311,7 @@ public class Main {
                             stmt.executeUpdate("UPDATE ISSUED SET RESERVED='"+1+"' WHERE BID="+bid);
                             stmt.executeUpdate("INSERT INTO REQUESTED_BOOKS(BID,BNAME,REQUESTED_UID) VALUES ('"+bid+"','"+bname+"',"+uid+")");
                             //stmt.executeUpdate("UPDATE REQUESTED_BOOKS SET BID='"+bid"', BNAME='"bname"',REQUESTED_UID="+uid);
-                            JOptionPane.showMessageDialog(null,"Book reserved!");
+                            JOptionPane.showMessageDialog(null,"Item requested!");
                             g.dispose();
 
                         }
@@ -369,12 +369,12 @@ public class Main {
         });
 
 
-        JButton view_but=new JButton("View Books");//creating instance of JButton to view books
+        JButton view_but=new JButton("View Items");//creating instance of JButton to view books
         view_but.setBounds(20,20,120,25);//x axis, y axis, width, height
         view_but.addActionListener(new ActionListener() {
                                        public void actionPerformed(ActionEvent e){
 
-                                           JFrame f = new JFrame("Books Available");
+                                           JFrame f = new JFrame("Items Available");
                                            //f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 
@@ -438,7 +438,7 @@ public class Main {
                                     }
         );
 
-        JButton issued_but=new JButton("View Issued Books");//creating instance of JButton to view the issued books
+        JButton issued_but=new JButton("View Issued Items");//creating instance of JButton to view the issued books
         issued_but.setBounds(280,20,160,25);//x axis, y axis, width, height
         issued_but.addActionListener(new ActionListener() {
                                          public void actionPerformed(ActionEvent e){
@@ -598,17 +598,17 @@ public class Main {
         });
 
 
-        JButton add_book=new JButton("Add Book"); //creating instance of JButton for adding books
+        JButton add_book=new JButton("Add an Items"); //creating instance of JButton for adding books
         add_book.setBounds(150,60,120,25);
 
         add_book.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e){
                 //set frame wot enter book details
-                JFrame g = new JFrame("Enter Book Details");
+                JFrame g = new JFrame("Enter Item Details");
                 //g.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 // set labels
                 JLabel l1,l2,l3,l4;
-                l1=new JLabel("Book Name");  //lebel 1 for book name
+                l1=new JLabel("Item Name");  //lebel 1 for book name
                 l1.setBounds(30,15, 100,30);
 
 
@@ -630,7 +630,7 @@ public class Main {
                 F_type.setBounds(110, 53, 200, 30);
                 //set text field for best-seller
                 JTextField F_bestSeller=new JTextField();
-                F_type.setBounds(110, 90, 200, 30);
+                F_bestSeller.setBounds(110, 90, 200, 30);
                 //set text field for price
                 JTextField F_price=new JTextField();
                 F_price.setBounds(110, 128, 200, 30);
@@ -655,7 +655,7 @@ public class Main {
                             Statement stmt = connection.createStatement();
                             stmt.executeUpdate("USE LIBRARY");
                             stmt.executeUpdate("INSERT INTO BOOKS(BNAME,TYPE,BEST_SELLER,PRICE) VALUES ('"+bname+"','"+type+"','"+bestseller+"',"+price_int+")");
-                            JOptionPane.showMessageDialog(null,"Book added!");
+                            JOptionPane.showMessageDialog(null,"Item added!");
                             g.dispose();
 
                         }
@@ -687,7 +687,7 @@ public class Main {
         });
 
 
-        JButton issue_book=new JButton("Issue Book"); //creating instance of JButton to issue books
+        JButton issue_book=new JButton("Issue Items"); //creating instance of JButton to issue books
         issue_book.setBounds(450,20,120,25);
 
         issue_book.addActionListener(new ActionListener() {
@@ -697,7 +697,7 @@ public class Main {
                 //g.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 //create labels
                 JLabel l1,l2,l3,l4;
-                l1=new JLabel("Book ID(BID)");  // Label 1 for Book ID
+                l1=new JLabel("Item ID(BID)");  // Label 1 for Book ID
                 l1.setBounds(30,15, 100,30);
 
 
@@ -858,7 +858,7 @@ public class Main {
             }
         });
 
-        JButton renew_book=new JButton("Renew Book"); //creating instance of JButton to return books
+        JButton renew_book=new JButton("Renew Item"); //creating instance of JButton to return books
         renew_book.setBounds(20,100,120,25);
 
         renew_book.addActionListener(new ActionListener() {
@@ -926,10 +926,10 @@ public class Main {
 
                                  stmt.executeUpdate("UPDATE ISSUED SET DUE_DATE='"+due_date+"',RENEWED='"+1+"' WHERE IID="+iid);
                                  g.dispose();
-                                JOptionPane.showMessageDialog(null,"Book Renewed!");
+                                JOptionPane.showMessageDialog(null,"Item Renewed!");
                             }
                             else if(renew == true){
-                                JOptionPane.showMessageDialog(null,"Request Denied! \n Item can be renewed once already!");
+                                JOptionPane.showMessageDialog(null,"Request Denied! \n Item has renewed already once!");
                             }else if (reserve == true){
                                 JOptionPane.showMessageDialog(null,"Request Denied! \n Item has been requested by another user!");
 
@@ -959,7 +959,7 @@ public class Main {
 
 
 
-        JButton return_book=new JButton("Return Book"); //creating instance of JButton to return books
+        JButton return_book=new JButton("Return Item"); //creating instance of JButton to return books
         return_book.setBounds(280,60,160,25);
 
         return_book.addActionListener(new ActionListener() {
@@ -1056,7 +1056,7 @@ public class Main {
 
                             }
 
-                            JOptionPane.showMessageDialog(null,"Book Returned!");
+                            JOptionPane.showMessageDialog(null,"Item Returned!");
 
                         }
 
@@ -1082,12 +1082,12 @@ public class Main {
         });
 
 
-        JButton view_request_but=new JButton("View Requested Books");//creating instance of JButton to view books
+        JButton view_request_but=new JButton("View Requested Items");//creating instance of JButton to view books
         view_request_but.setBounds(150,100,200,25);//x axis, y axis, width, height
         view_request_but.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e){
 
-                        JFrame f = new JFrame("Books Requested");
+                        JFrame f = new JFrame("Item Requested");
                         //f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
                         Connection connection = connect(); //connect to database
