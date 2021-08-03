@@ -160,7 +160,7 @@ public class Main {
             String sql1 = "CREATE TABLE USERS(UID INT NOT NULL AUTO_INCREMENT PRIMARY KEY, USERNAME VARCHAR(30), PASSWORD VARCHAR(30),AGE TINYINT, ADDRESS VARCHAR(100), PHONENO BIGINT, ADMIN BOOLEAN)";
             stmt.executeUpdate(sql1);
             //Insert into users table
-            stmt.executeUpdate("INSERT INTO USERS(USERNAME, PASSWORD, AGE , ADDRESS ,PHONENO ,ADMIN ) VALUES('admin','admin',40,'123 ABCD',123-456-789,TRUE)");
+            stmt.executeUpdate("INSERT INTO USERS(USERNAME, PASSWORD, AGE , ADDRESS ,PHONENO ,ADMIN ) VALUES('admin','admin',40,'123 ABCD',123456789,TRUE),('janki','janki',20,'123 Austin,texas',123456789,FALSE),('sravani','sravani',20,'089 Austin,texas',113089738,FALSE),('jyotsna','123',20,'90 Round Rock,texas',3313855867,FALSE),('Abhilash','123',11,'90 San-marcos,texas',3313886059,FALSE)");
             //Create Books table
             stmt.executeUpdate("CREATE TABLE BOOKS(BID INT NOT NULL AUTO_INCREMENT PRIMARY KEY, BNAME VARCHAR(50), TYPE VARCHAR(20),BEST_SELLER BOOLEAN,PRICE INT)");
             //Create Issued Table
@@ -168,7 +168,9 @@ public class Main {
             
            // stmt.executeUpdate("CREATE TABLE RESERVE_BOOK(BID INT NOT NULL PRIMARY KEY, BNAME VARCHAR(50),RESERVE_UID INT)");
           //Insert into books table
-            stmt.executeUpdate("INSERT INTO BOOKS(BNAME, TYPE,BEST_SELLER, PRICE) VALUES ('War and Peace','Book',TRUE, 200),  ('The Guest Book','Reference Book',FALSE, 300), ('The Perfect Murder','Audio/Video',FALSE, 150), ('Accidental Presidents','Book',FALSE, 250), ('The Wicked King','Magezine',FALSE, 350)");
+            stmt.executeUpdate("INSERT INTO BOOKS(BNAME, TYPE,BEST_SELLER, PRICE) VALUES ('War and Peace','Book',TRUE, 200),  ('The Guest Book','Book',FALSE, 300), ('The Perfect Murder','Audio/Video',FALSE, 150), ('Accidental Presidents','Book',FALSE, 250), ('The Wicked King','Book',FALSE, 350),('The King Kong','Book',FALSE, 150),('The Essence','Book',FALSE, 100),('Adv Software Project','Book',FALSE, 100),('Database Theory','Book',FALSE, 100),('software engg.','Reference Book',FALSE, 100),('Forbes','Magazine',FALSE, 100)");
+
+            //stmt.executeUpdate("INSERT INTO BOOKS(BNAME, TYPE,BEST_SELLER, PRICE) VALUES ('War and Peace','Book',TRUE, 200),  ('The Guest Book','Reference Book',FALSE, 300), ('The Perfect Murder','Audio/Video',FALSE, 150), ('Accidental Presidents','Book',FALSE, 250), ('The Wicked King','Magezine',FALSE, 350)");
             stmt.executeUpdate("CREATE TABLE REQUESTED_BOOKS(BID INT NOT NULL PRIMARY KEY, BNAME VARCHAR(50),REQUESTED_UID INT)");
             //stmt.executeUpdate("INSERT INTO RESERVE_BOOK(BID INT NOT NULL PRIMARY KEY, BNAME VARCHAR(50),REQUESTED_UID INT)");
             resultSet.close();
